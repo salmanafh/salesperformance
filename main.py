@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from babel.numbers import format_currency
-from pathlib import Path
+# from pathlib import Path
 from helper import create_byage_df, create_bygender_df, create_bystate_df, create_daily_order_df, create_rmf_df, create_sum_order_items_df
 sns.set_style("dark")
 
-data_dir = Path("../Datasets/all_data.csv").parent.resolve() / "all_data.csv"
+# data_dir = Path("../Datasets/all_data.csv").parent.resolve() / "all_data.csv"
 
 st.set_page_config(
     page_title="Sales Performance Dashboard",
@@ -16,7 +16,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-all_df = pd.read_csv(data_dir)
+all_df = pd.read_csv("all_data.csv")
 datetime_columns = ["order_date", "delivery_date"]
 all_df.sort_values(by="order_date", inplace=True)
 all_df.reset_index(inplace=True)
